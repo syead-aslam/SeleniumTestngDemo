@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Loan Department" parallel="tests" thread-count="2">
+	<listeners>
+		<listener class-name="com.testngcheck.Listeners"/>
+	</listeners>
+	  <test thread-count="5" name="Regression">
+		  <groups>
+			  <run>
+			  	<include name="smoke"/>
+			  </run>
+		  </groups>
+	    <classes>
+	      <class name="com.testngcheck.personalLoan"/>
+	      <class name="com.testngcheck.carLoan"/>
+	      <class name="com.testngcheck.goldLoan"/>
+	      <class name="com.testngcheck.homeLoan"/>
+	    </classes>
+	    </test>
+	    <test name="Home Loan">
+	    <parameter name="salaryslip" value="3 month"/>
+	    <parameter name="documents" value="Adhaar Card"/>
+		    <classes>
+		    	<class name="com.testngcheck.homeLoan"/>
+		    </classes>
+	    </test>
+</suite> <!-- Suite -->
